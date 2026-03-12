@@ -22,7 +22,7 @@ export default function Marquee() {
 
   return (
     <div
-      className="w-full overflow-hidden border-y border-neutral-100 py-4 bg-white select-none"
+      className="w-full overflow-hidden border-y border-white/20 py-4 bg-transparent select-none"
       aria-hidden="true"
     >
       <div className="flex animate-marquee whitespace-nowrap">
@@ -32,8 +32,8 @@ export default function Marquee() {
             className={[
               "inline-block px-3 text-sm font-medium uppercase tracking-widest",
               word === "·"
-                ? "text-primary"
-                : "text-neutral-400",
+                ? "text-white"
+                : "text-white/60",
             ].join(" ")}
           >
             {word}

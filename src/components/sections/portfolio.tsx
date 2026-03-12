@@ -104,16 +104,16 @@ export default function Portfolio() {
     <section
       id="work"
       aria-label="Our work"
-      className="px-6 md:px-10 max-w-screen-xl mx-auto py-24 md:py-36"
+      className="px-6 md:px-10 max-w-screen-xl mx-auto py-24 md:py-36 bg-[#FF5A00]"
     >
       {/* Section header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
-        <h2 className="display-lg text-foreground">
+        <h2 className="display-lg text-white">
           Selected
           <br />
-          <span className="text-primary">work</span>
+          <span className="text-black">work</span>
         </h2>
-        <p className="max-w-sm text-base text-muted-foreground leading-relaxed font-light">
+        <p className="max-w-sm text-base text-white/75 leading-relaxed font-light">
           A handpicked cut of projects across film, brand and commercial
           — chosen for craft, not quantity.
         </p>
@@ -252,7 +252,7 @@ export default function Portfolio() {
       <div className="mt-12 text-center">
         <a
           href="#contact"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-white/80 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
         >
           Commission your project
           <ArrowUpRight size={14} aria-hidden="true" />

@@ -1,18 +1,19 @@
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Play } from "lucide-react";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
+import Marquee from "@/components/marquee";
 
 // Brand-orange radial glow on near-black — rgb(255, 90, 0) = #FF5A00
 const GRADIENT_COLORS = [
   "#000000", // deep black core
   "#2D0A00", // very dark warm
   "#FF5A00", // brand orange peak
-  "#CC4800", // ember fade
-  "#4A1500", // dark ember
-  "#0D0200", // near black
-  "#000000", // full black edge
+  "#FF5A00", // solid orange
+  "#FF5A00", // solid orange
+  "#FF5A00", // solid orange
+  "#FF5A00", // solid orange edge
 ];
-const GRADIENT_STOPS = [35, 50, 60, 70, 80, 90, 100];
+const GRADIENT_STOPS = [1, 20, 30, 45, 60, 75, 100];
 
 const STATS = [
   { value: "120+", label: "Projects" },
@@ -32,10 +33,10 @@ export default function Hero() {
       <AnimatedGradientBackground
         gradientColors={GRADIENT_COLORS}
         gradientStops={GRADIENT_STOPS}
-        startingGap={120}
+        startingGap={210}
         Breathing
-        breathingRange={11}
-        animationSpeed={0.011}
+        breathingRange={4}
+        animationSpeed={0.02}
         topOffset={10}
         containerClassName="bg-black"
       />
@@ -112,6 +113,11 @@ export default function Hero() {
         </div>
 
 
+      </div>
+
+      {/* Marquee sits on the animated gradient */}
+      <div className="relative z-10">
+        <Marquee />
       </div>
     </section>
   );

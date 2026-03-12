@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
@@ -25,11 +26,17 @@ export default function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-black text-xl tracking-tight leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded flex items-baseline gap-1"
+            className="font-black text-xl tracking-tight leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded flex items-center"
             aria-label="Cheeky Studio – go to homepage"
           >
-            <span className="text-[#FF5A00]">Cheeky</span>
-            <span className="text-white">Studio</span>
+            {/* replace '/logo.png' with your actual image path in public/ */}
+            <Image
+              src="/logo.png"
+              alt="Cheeky Studio logo"
+              width={120}
+              height={40}
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

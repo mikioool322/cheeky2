@@ -1,7 +1,6 @@
 import Nav from "@/components/nav";
 import Hero from "@/components/sections/hero";
 import Portfolio from "@/components/sections/portfolio";
-import Marquee from "@/components/marquee";
 import Features from "@/components/sections/features";
 import About from "@/components/sections/about";
 import CtaSection from "@/components/sections/cta-section";
@@ -21,14 +20,20 @@ export default function Home() {
       <Nav />
 
       <main id="main-content">
-        {/* 1 — Hero: hook + above-fold CTA */}
+        {/* 1 — Hero + Marquee (shares animated gradient) */}
         <Hero />
 
-        {/* Marquee ticker */}
-        <Marquee />
+        {/* Gradient transition: black → orange */}
+        <div className="h-32 md:h-48 bg-gradient-to-b from-black to-[#FF5A00]" aria-hidden="true" />
 
-        {/* 2 — Portfolio */}
-        <Portfolio />
+        {/* Orange zone: portfolio */}
+        <div className="bg-[#FF5A00]">
+          {/* 2 — Portfolio */}
+          <Portfolio />
+        </div>
+
+        {/* Gradient transition: orange → white */}
+        <div className="h-48 md:h-72 bg-gradient-to-b from-[#FF5A00] via-[#FF8C40] to-white" aria-hidden="true" />
 
         {/* 3 — Features / Services */}
         <Features />
