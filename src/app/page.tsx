@@ -34,8 +34,13 @@ export default function Home() {
         {/* About strip */}
         <About />
 
+        {/* Gradient transition: white → orange */}
+        <div className="h-48 md:h-72 bg-gradient-to-b from-[rgb(238,247,253)] via-[#FF8C40] to-[#FF6712]" aria-hidden="true" />
+
         {/* 4 — CTA */}
+        <div className="bg-[#FF5A00]">
         <CtaSection />
+        </div>
       </main>
 
       <Footer />

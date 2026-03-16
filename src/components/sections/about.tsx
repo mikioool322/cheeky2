@@ -52,7 +52,7 @@ export default function About() {
           >
             Est. 2019
           </Badge>
-          <h2 className="display-md text-foreground">
+          <h2 className="display-lg text-foreground">
             We build
             <br />
             <span className="text-primary">visual</span>

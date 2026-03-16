@@ -27,13 +27,13 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Hero"
-      className="relative min-h-[50vh] md:min-h-screen overflow-hidden bg-black"
+      className="relative min-h-[50vh] md:min-h-[50vh] xl:min-h-screen overflow-hidden bg-black"
     >
       {/* Animated gradient fills the full viewport */}
       <AnimatedGradientBackground
         gradientColors={GRADIENT_COLORS}
         gradientStops={GRADIENT_STOPS}
-        startingGap={210}
+        startingGap={220}
         Breathing
         breathingRange={4}
         animationSpeed={0.02}
@@ -42,7 +42,7 @@ export default function Hero() {
       />
 
       {/* Content — centred, dark-on-light flipped to light-on-dark */}
-      <div className="relative z-10 max-h-[55vh] md:min-h-screen flex flex-col justify-between pt-16 pb-16 px-6 md:px-10 max-w-screen-xl mx-auto">
+      <div className="relative z-10 md:min-h-[50vh] xl:min-h-screen flex flex-col justify-between pt-4 pb-4 px-6 md:px-10 max-w-screen-xl mx-auto">
         {/* Top area: badge + headline */}
         <div className="flex flex-col gap-8 pt-16 md:pt-24 lg:pt-28">
           {/* Eyebrow */}

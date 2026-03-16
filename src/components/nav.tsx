@@ -19,7 +19,7 @@ export default function Nav() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 bg-neutral-950 border-b border-white/10"
+        className="fixed top-0 left-0 right-0 z-50 bg-neutral-950/40 backdrop-blur-sm border-b border-white/10"
         role="banner"
       >
         <div className="mx-auto max-w-screen-xl px-6 md:px-10 h-16 flex items-center justify-between">
