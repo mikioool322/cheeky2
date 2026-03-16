@@ -39,8 +39,11 @@ export default function Home() {
 
         {/* 4 — CTA */}
         <div className="bg-[#FF5A00]">
-        <CtaSection />
+          <CtaSection />
         </div>
+
+        {/* Gradient transition: orange → black */}
+        <div className="h-64 md:h-72 bg-gradient-to-b from-[#FF6712] to-[#0a0a0a]" aria-hidden="true" />
       </main>
 
       <Footer />

@@ -189,6 +189,13 @@
   }
 }
 
+/* ── Tall-screen hero cap ── */
+@media (min-height: 2160px) {
+  #hero {
+    min-height: 70vh;
+  }
+}
+
 /* ── Marquee animation ── */
 @keyframes marquee {
   0%   { transform: translateX(0); }

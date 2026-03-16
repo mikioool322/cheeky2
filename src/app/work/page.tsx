@@ -827,6 +827,9 @@ export default function PortfolioPage() {
           </section>
 
         </div>
+
+        {/* Gradient transition: background → footer */}
+        <div className="h-48 md:h-72 bg-gradient-to-b from-[rgb(238,247,253)] to-neutral-950" aria-hidden="true" />
       </main>
 
       <Footer />
