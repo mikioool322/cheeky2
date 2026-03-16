@@ -18,14 +18,15 @@ const WORDS = [
 ];
 
 export default function Marquee() {
-  const items = [...WORDS, ...WORDS]; // duplicate for seamless loop
+  // Repeat the word list multiple times so the marquee always fills wide viewports
+  const items = Array(4).fill(WORDS).flat();
 
   return (
     <div
       className="w-full overflow-hidden border-y border-white/20 py-4 bg-transparent select-none"
       aria-hidden="true"
     >
-      <div className="flex animate-marquee whitespace-nowrap">
+      <div className="inline-flex animate-marquee whitespace-nowrap">
         {items.map((word, i) => (
           <span
             key={i}
