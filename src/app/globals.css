@@ -126,6 +126,7 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* account for fixed navbar */
   }
   @media (prefers-reduced-motion: reduce) {
     html {

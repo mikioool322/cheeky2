@@ -6,9 +6,9 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
 ];
 
 export default function Nav() {
@@ -102,7 +102,7 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={handleLinkClick}
             className="mt-6 inline-block w-fit bg-primary text-primary-foreground font-semibold text-lg px-8 py-3 rounded-none hover:bg-primary/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >

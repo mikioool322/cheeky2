@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Clapperboard, Smartphone, Mic, Camera, Box, Film, Zap } from "lucide-react";
 
@@ -114,13 +116,22 @@ export default function Features() {
       <div ref={listRef} className="divide-y divide-neutral-100">
         {SERVICES.map((service, i) => {
           const Icon = service.icon;
+          const SECTION_ANCHORS: Record<string, string> = {
+            "TVC": "#tvc-heading",
+            "Social Media Content": "#spoty-heading",
+            "Radio": "#making-of-heading",
+            "Photo & Video Shoots": "#photo-shoots-heading",
+            "3D Animation": "#animation-heading",
+            "Postproduction": "#postproduction-heading",
+            "Out-of-the-Box": "#outofthebox-heading",
+          };
+
+          const linkTarget = SECTION_ANCHORS[service.title] ?? "#services";
+
           return (
-            <motion.div
+            <Link
               key={service.num}
-              custom={i}
-              variants={serviceVariants}
-              initial="hidden"
-              animate={listInView ? "visible" : "hidden"}
+              href={`/work${linkTarget}`}
               className="group grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] items-start gap-4 md:gap-8 py-8 md:py-10 transition-colors duration-200 hover:bg-neutral-50 -mx-6 md:-mx-10 px-6 md:px-10"
             >
               {/* Number */}
@@ -130,8 +141,15 @@ export default function Features() {
 
               {/* Title + icon */}
               <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center border border-neutral-200 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-200">
-                  <Icon size={18} strokeWidth={1.5} aria-hidden="true" />
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center border border-neutral-200 group-hover:border-primary group-hover:bg-primary transition-all duration-200">
+                  <Image
+                    src="/emoji_outline.png"
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="object-contain"
+                    aria-hidden="true"
+                  />
                 </div>
                 <h3 className="font-black text-2xl md:text-3xl tracking-tight leading-none">
                   {service.title}
@@ -142,7 +160,7 @@ export default function Features() {
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-light pt-1">
                 {service.description}
               </p>
-            </motion.div>
+            </Link>
           );
         })}
       </div>

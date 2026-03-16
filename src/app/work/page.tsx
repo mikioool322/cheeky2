@@ -112,6 +112,16 @@ export default function PortfolioPage() {
         {/* ── Page content ── */}
         <div className="max-w-screen-xl mx-auto px-6 md:px-10 py-14 md:py-20">
 
+          {/* ══ PAGE HEADER ══ */}
+          <div className="mb-16 md:mb-24">
+            <h1 className="display-lg text-primary uppercase leading-none mb-4">
+              Nasze portfolio
+            </h1>
+            <p className="text-base md:text-lg text-foreground/60 font-light max-w-lg leading-relaxed">
+              Filmy, kampanie i projekty, które mówią same za siebie — od TVC po animację 3D.
+            </p>
+          </div>
+
           {/* ══ TVC SECTION ══ */}
           <section aria-labelledby="tvc-heading" className="mb-20 md:mb-28">
 
@@ -401,6 +411,9 @@ export default function PortfolioPage() {
                   <p className="text-sm text-foreground/80">DOP: Łukasz Łatanik</p>
                 </div>
               </div>
+              <h2 className="display-md text-primary uppercase leading-none">
+                DATA PRESENTATION
+              </h2>
               <div className="flex flex-col gap-3">
                 <div className="w-full aspect-video">
                   <VideoPlaceholder className="w-full h-full" />
@@ -411,9 +424,7 @@ export default function PortfolioPage() {
                   <p className="text-sm font-bold text-foreground">we did postproduction</p>
                 </div>
               </div>
-              <h2 className="display-md text-primary uppercase leading-none">
-                DATA PRESENTATION
-              </h2>
+              
             </div>
 
             {/* ── Desktop: original layout ── */}

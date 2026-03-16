@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 
@@ -24,11 +25,16 @@ export default function Footer() {
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="font-black text-2xl tracking-tight leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+              className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
               aria-label="cheeky – go to homepage"
             >
-              cheeky
-              <span className="text-primary" aria-hidden="true">.</span>
+              <Image
+                src="/logo.png"
+                alt="cheeky logo"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
             </Link>
             <p className="mt-3 text-sm text-white/40 font-light max-w-[200px] leading-relaxed">
               Production work that doesn&apos;t apologize.
