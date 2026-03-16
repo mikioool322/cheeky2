@@ -83,7 +83,7 @@ export default function About() {
             {CLIENTS.map((client) => (
               <div
                 key={client}
-                className="bg-white flex items-center justify-center py-6 px-4 text-xs font-semibold tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-150"
+                className="bg-[rgb(238,247,253)] flex items-center justify-center py-6 px-4 text-xs font-semibold tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors duration-150"
               >
                 {client}
               </div>

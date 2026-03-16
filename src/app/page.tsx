@@ -23,8 +23,7 @@ export default function Home() {
         {/* 1 — Hero + Marquee (shares animated gradient) */}
         <Hero />
 
-        {/* Gradient transition: black → orange */}
-        <div className="h-32 md:h-48 bg-gradient-to-b from-black to-[#FF5A00]" aria-hidden="true" />
+        
 
         {/* Orange zone: portfolio */}
         <div className="bg-[#FF5A00]">
@@ -33,7 +32,7 @@ export default function Home() {
         </div>
 
         {/* Gradient transition: orange → white */}
-        <div className="h-48 md:h-72 bg-gradient-to-b from-[#FF5A00] via-[#FF8C40] to-white" aria-hidden="true" />
+        <div className="h-48 md:h-72 bg-gradient-to-b from-[#FF5A00] via-[#FF8C40] to-[rgb(238,247,253)]" aria-hidden="true" />
 
         {/* 3 — Features / Services */}
         <Features />

@@ -2,50 +2,57 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Clapperboard, Film, Palette, Volume2, Zap, Globe } from "lucide-react";
+import { Clapperboard, Smartphone, Mic, Camera, Box, Film, Zap } from "lucide-react";
 
 const SERVICES = [
   {
     num: "01",
     icon: Clapperboard,
-    title: "Direction",
+    title: "TVC",
     description:
-      "Conceptual vision translated into moving image. We direct commercials, brand films, music videos and documentary short-forms that earn attention.",
+      "Robimy produkcje sprawnie i konkretnie; przy nas zawsze możesz czuć się bezpiecznie. Od początku procesu doradzamy, planujemy, optymalizujemy i szukamy rozwiązań, a przy tym utrzymujemy standardy i dbamy o ekipę.",
   },
   {
     num: "02",
-    icon: Film,
-    title: "Production",
+    icon: Smartphone,
+    title: "Social Media Content",
     description:
-      "Full-service production management — locations, talent, crew, logistics. We assemble the right team for every project, anywhere in the world.",
+      "Wszechogarniający nas content video to po części nasza sprawka. Robimy materiały na social media, niestandardowe formaty w niestandardowych okolicznościach, często w nieoczekiwanym miejscu i czasie. Żadna specyfikacja techniczna nie jest nam straszna.",
   },
   {
     num: "03",
-    icon: Palette,
-    title: "Colour Grading",
+    icon: Mic,
+    title: "Radio",
     description:
-      "From technical correction to full creative look development. We build the visual language that makes your project unmistakable.",
+      "Organizujemy sesje nagraniowe stacjonarne lub transmisje online. Pomagamy w wyborze lektorów oraz doborze muzyki. Koordynujemy cały proces i dbamy o każdy detal od początku do końca.",
   },
   {
     num: "04",
-    icon: Volume2,
-    title: "Sound Design",
+    icon: Camera,
+    title: "Photo & Video Shoots",
     description:
-      "Bespoke audio — score composition, foley, mix and mastering. Because the best visuals deserve to be heard at the same level.",
+      "Organizujemy sesje fotograficzne w studio, w plenerze, w lokacji, gdzie tylko zechcesz – możemy też zawsze podpowiedzieć, gdzie będzie najlepiej. Prowadzimy castingi, załatwiamy scenografie, kostiumy, make'upy – wszystko co konieczne, a przy tym dbamy o komfort pracy na planie i miłą atmosferę.",
   },
   {
     num: "05",
-    icon: Zap,
-    title: "Post Production",
+    icon: Box,
+    title: "3D Animation",
     description:
-      "Edit, VFX, motion graphics and delivery across all specs. Fast, transparent, no surprises.",
+      "W naszym portfolio znajdziesz całą serię animowanych filmów z postaciami 3D. Generujemy świat 3D od podstaw, modelujemy, animujemy, renderujemy, później to wszystko składamy i oprawiamy dźwiękiem – dzięki zoptymalizowanemu pipeline'owi przekłada się to na atrakcyjny czas realizacji i budżet. Nie kłamiemy!",
   },
   {
     num: "06",
-    icon: Globe,
-    title: "Brand Strategy",
+    icon: Film,
+    title: "Postproduction",
     description:
-      "We help brands find the story only they can tell — from a single manifesto to a multi-year content architecture.",
+      "Znamy się na tym. Robimy dokładnie to co inne studia postprodukcyjne, tylko lepiej i szybciej. Nasz zakres prac uwzględnia: montaż offline, korekcję koloru, montaż online, animacje 2D, compositing, rendering, tracking 3D. Nie wahaj się napisać do nas w tej sprawie.",
+  },
+  {
+    num: "07",
+    icon: Zap,
+    title: "Out-of-the-Box",
+    description:
+      "Powinniśmy od tego zacząć! Jeśli masz niestandardowy pomysł i nie wiesz, jak się zabrać za jego realizację – koniecznie zgłoś się do nas. Jesteśmy ekipą od zadań specjalnych. Nie ma głupich pomysłów, a dla nas niemożliwe nie istnieje.",
   },
 ];
 

@@ -81,7 +81,7 @@ export default function Nav() {
         aria-hidden={!open}
         className={[
           "fixed inset-0 z-40 flex flex-col",
-          "bg-white",
+          "bg-[rgb(238,247,253)]",
           "transition-all duration-200",
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         ].join(" ")}

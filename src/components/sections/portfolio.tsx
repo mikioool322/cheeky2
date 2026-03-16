@@ -40,8 +40,8 @@ const PROJECTS = [
     title: "MIREN OLIVE",
     category: "Product Film",
     year: "2024",
-    bg: "bg-[oklch(0.647_0.234_32.6)]",
-    accent: "bg-white",
+    bg: "bg-[#ff6712]",
+    accent: "bg-[rgb(238,247,253)]",
     span: "md:col-span-1",
     description: "Slow luxury for a Basque premium oil brand.",
   },
@@ -234,7 +234,7 @@ export default function Portfolio() {
                     <ArrowUpRight
                       size={16}
                       className={
-                        project.accent === "bg-white" || project.accent === "bg-foreground"
+                        project.accent === "bg-[rgb(238,247,253)]" || project.accent === "bg-foreground"
                           ? "text-background"
                           : "text-white"
                       }

@@ -7,7 +7,7 @@ export default function CtaSection() {
     <section
       id="contact"
       aria-label="Contact and call to action"
-      className="bg-[oklch(0.647_0.234_32.6)] text-white overflow-hidden"
+      className="bg-[#ff6712] text-white overflow-hidden"
     >
       <div className="max-w-screen-xl mx-auto px-6 md:px-10 py-24 md:py-36 flex flex-col gap-12">
         {/* Headline */}
@@ -77,7 +77,7 @@ export default function CtaSection() {
 
             <button
               type="submit"
-              className="self-start inline-flex items-center gap-2 bg-white text-[oklch(0.647_0.234_32.6)] font-bold text-sm uppercase tracking-wider px-8 py-3 rounded-none hover:bg-white/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white group"
+              className="self-start inline-flex items-center gap-2 bg-[rgb(238,247,253)] text-[#ff6712] font-bold text-sm uppercase tracking-wider px-8 py-3 rounded-none hover:bg-[rgb(238,247,253)]/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(238,247,253)] group"
             >
               Send it
               <ArrowRight

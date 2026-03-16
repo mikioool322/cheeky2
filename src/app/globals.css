@@ -45,18 +45,19 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-white: rgb(238, 247, 253);
 }
 
 :root {
-  /* Brand: rgb(255, 90, 0) ≈ oklch(0.647 0.234 32.6) */
-  --background: oklch(1 0 0);
+  /* Brand: #ff6712 */
+  --background: oklch(0.971 0.013 231);
   --foreground: oklch(0.09 0 0);
-  --card: oklch(1 0 0);
+  --card: oklch(0.971 0.013 231);
   --card-foreground: oklch(0.09 0 0);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.971 0.013 231);
   --popover-foreground: oklch(0.09 0 0);
-  --primary: oklch(0.647 0.234 32.6);
-  --primary-foreground: oklch(1 0 0);
+  --primary: #ff6712;
+  --primary-foreground: oklch(0.971 0.013 231);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.09 0 0);
   --muted: oklch(0.97 0 0);
@@ -66,8 +67,8 @@
   --destructive: oklch(0.58 0.22 27);
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
-  --ring: oklch(0.647 0.234 32.6);
-  --chart-1: oklch(0.647 0.234 32.6);
+  --ring: #ff6712;
+  --chart-1: #ff6712;
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
   --chart-4: oklch(0.488 0.243 264.376);
@@ -75,12 +76,12 @@
   --radius: 0.125rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.09 0 0);
-  --sidebar-primary: oklch(0.647 0.234 32.6);
-  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-primary: #ff6712;
+  --sidebar-primary-foreground: oklch(0.971 0.013 231);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.09 0 0);
   --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.647 0.234 32.6);
+  --sidebar-ring: #ff6712;
 }
 
 .dark {
@@ -146,13 +147,13 @@
     overflow-x: hidden;
   }
   :focus-visible {
-    outline: 2.5px solid oklch(0.647 0.234 32.6);
+    outline: 2.5px solid #ff6712;
     outline-offset: 3px;
     border-radius: 2px;
   }
   ::selection {
-    background-color: oklch(0.647 0.234 32.6);
-    color: oklch(1 0 0);
+    background-color: #ff6712;
+    color: oklch(0.971 0.013 231);
   }
   a {
     text-decoration: none;
