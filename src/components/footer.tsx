@@ -31,9 +31,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="cheeky logo"
-                width={40}
+                width={120}
                 height={40}
-                className="h-10 w-10"
+                className="h-10 w-auto"
               />
             </Link>
             <p className="mt-3 text-sm text-white/40 font-light max-w-[200px] leading-relaxed">
