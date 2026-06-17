@@ -24,6 +24,12 @@ export const VideoCarousel = React.forwardRef<HTMLDivElement, VideoCarouselProps
     );
     const [isPlaying, setIsPlaying] = React.useState(false);
     const [timerResetKey, setTimerResetKey] = React.useState(0);
+    const [loadedVideos, setLoadedVideos] = React.useState<Set<string>>(new Set());
+    const videoRefsRef = React.useRef<Record<string, HTMLVideoElement>>({});
+
+    const handlePlayClick = React.useCallback((src: string, videoElement: HTMLVideoElement) => {
+      setLoadedVideos((prev) => new Set(prev).add(src));
+    }, []);
 
     const handleNext = React.useCallback(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -148,9 +154,10 @@ export const VideoCarousel = React.forwardRef<HTMLDivElement, VideoCarouselProps
               aria-label="Next video"
             >
               <ChevronRight className="h-6 w-6" />
-            </Button>src={video.src}
-                      poster={video.poster}
-                      controls={isCenter}
-                      controlsList="nodownload"
-                      preload="none"
-                      onPlay={() => setIsPlaying(true)
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+);
