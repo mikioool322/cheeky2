@@ -23,11 +23,7 @@ export const VideoCarousel = React.forwardRef<HTMLDivElement, VideoCarouselProps
       Math.floor(videos.length / 2)
     );
     const [isPlaying, setIsPlaying] = React.useState(false);
-    const [videoBlobUrls, setVideoBlobUrls] = React.useState<Record<string, string>>({});
-    const [loadedVideos, setLoadedVideos] = React.useState<Set<string>>(new Set());
     const [timerResetKey, setTimerResetKey] = React.useState(0);
-    const blobUrlsRef = React.useRef<Record<string, string>>({});
-    const videoRefsRef = React.useRef<Record<string, HTMLVideoElement | null>>({});
 
     const handleNext = React.useCallback(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -46,49 +42,6 @@ export const VideoCarousel = React.forwardRef<HTMLDivElement, VideoCarouselProps
       }, 4000);
       return () => clearInterval(timer);
     }, [videos.length, isPlaying, timerResetKey]);
-
-    // Load video as blob on demand
-    const loadVideoBlobUrl = React.useCallback(async (videoSrc: string) => {
-      if (blobUrlsRef.current[videoSrc]) {
-        return blobUrlsRef.current[videoSrc];
-      }
-
-      try {
-        const response = await fetch(videoSrc);
-        const blob = await response.blob();
-        const blobUrl = URL.createObjectURL(blob);
-        blobUrlsRef.current[videoSrc] = blobUrl;
-        setVideoBlobUrls((prev) => ({ ...prev, [videoSrc]: blobUrl }));
-        setLoadedVideos((prev) => new Set(prev).add(videoSrc));
-        return blobUrl;
-      } catch (error) {
-        console.error(`Failed to load video: ${videoSrc}`, error);
-        return videoSrc;
-      }
-    }, []);
-
-    // Handle play event - load full video when user clicks play
-    const handlePlayClick = React.useCallback(
-      async (videoSrc: string, videoElement: HTMLVideoElement) => {
-        const blobUrl = await loadVideoBlobUrl(videoSrc);
-        if (videoElement.src !== blobUrl) {
-          videoElement.src = blobUrl;
-        }
-      },
-      [loadVideoBlobUrl]
-    );
-
-    // Cleanup blob URLs on unmount
-    React.useEffect(() => {
-      return () => {
-        Object.values(blobUrlsRef.current).forEach((blobUrl) => {
-          if (blobUrl.startsWith('blob:')) {
-            URL.revokeObjectURL(blobUrl);
-          }
-        });
-        blobUrlsRef.current = {};
-      };
-    }, []);
 
     if (videos.length === 0) {
       return null;
@@ -195,12 +148,9 @@ export const VideoCarousel = React.forwardRef<HTMLDivElement, VideoCarouselProps
               aria-label="Next video"
             >
               <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-);
-
-VideoCarousel.displayName = "VideoCarousel";
+            </Button>src={video.src}
+                      poster={video.poster}
+                      controls={isCenter}
+                      controlsList="nodownload"
+                      preload="none"
+                      onPlay={() => setIsPlaying(true)
