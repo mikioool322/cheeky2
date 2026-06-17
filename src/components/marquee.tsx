@@ -1,25 +1,10 @@
-const WORDS = [
-  "Direction",
-  "·",
-  "Production",
-  "·",
-  "Colour",
-  "·",
-  "Sound",
-  "·",
-  "Brand Films",
-  "·",
-  "Commercials",
-  "·",
-  "Documentaries",
-  "·",
-  "Post Production",
-  "·",
-];
+"use client";
+
+import { useDictionary } from "@/lib/dictionary-context";
 
 export default function Marquee() {
-  // Repeat the word list multiple times so the marquee always fills wide viewports
-  const items = Array(4).fill(WORDS).flat();
+  const { dict } = useDictionary();
+  const items = Array(4).fill(dict.marquee.words).flat();
 
   return (
     <div

@@ -3,16 +3,24 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-
-const NAV_LINKS = [
-  { label: "Work", href: "/work" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-];
+import { useDictionary } from "@/lib/dictionary-context";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const { dict, locale } = useDictionary();
+  const pathname = usePathname();
+
+  // Helper to generate locale-aware paths
+  const getLocalePath = (path: string) => {
+    return locale === "en" ? path : `/${locale}${path}`;
+  };
+
+  const NAV_LINKS = [
+    { label: dict.nav.work, href: getLocalePath("/#work") },
+    { label: dict.nav.services, href: getLocalePath("/#services") },
+  ];
 
   const handleLinkClick = () => setOpen(false);
 
@@ -25,14 +33,13 @@ export default function Nav() {
         <div className="mx-auto max-w-screen-xl px-6 md:px-10 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link
-            href="/"
+            href={getLocalePath("/")}
             className="font-black text-xl tracking-tight leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded flex items-center"
-            aria-label="Cheeky Studio – go to homepage"
+            aria-label={dict.nav.homeAriaLabel}
           >
-            {/* replace '/logo.png' with your actual image path in public/ */}
             <Image
               src="/logo.png"
-              alt="Cheeky Studio logo"
+              alt={dict.nav.logoAlt}
               width={120}
               height={40}
               priority
@@ -40,7 +47,7 @@ export default function Nav() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center gap-8" aria-label={dict.nav.mainNav}>
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -53,19 +60,19 @@ export default function Nav() {
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <a
-              href="#contact"
+              href={getLocalePath("/#contact")}
               className="inline-flex items-center shrink-0 rounded-none font-semibold tracking-tight px-5 h-9 bg-primary hover:bg-primary/90 text-primary-foreground text-sm transition-colors duration-200"
             >
-              Let&#39;s talk
+              {dict.nav.letsTalk}
             </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
             className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? dict.nav.closeMenu : dict.nav.openMenu}
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
@@ -89,7 +96,7 @@ export default function Nav() {
         <div className="h-16" aria-hidden="true" />
         <nav
           className="flex flex-col gap-2 px-6 py-8"
-          aria-label="Mobile navigation"
+          aria-label={dict.nav.mobileNav}
         >
           {NAV_LINKS.map((link) => (
             <Link
@@ -101,12 +108,13 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
+
           <a
-            href="/#contact"
+            href={getLocalePath("/#contact")}
             onClick={handleLinkClick}
             className="mt-6 inline-block w-fit bg-primary text-primary-foreground font-semibold text-lg px-8 py-3 rounded-none hover:bg-primary/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
-            Let&#39;s talk
+            {dict.nav.letsTalk}
           </a>
         </nav>
       </div>

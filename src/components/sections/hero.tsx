@@ -1,7 +1,10 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Play } from "lucide-react";
 import AnimatedGradientBackground from "@/components/ui/animated-gradient-background";
 import Marquee from "@/components/marquee";
+import { useDictionary } from "@/lib/dictionary-context";
 
 // Brand-orange radial glow on near-black — rgb(255, 90, 0) = #FF5A00
 const GRADIENT_COLORS = [
@@ -15,14 +18,19 @@ const GRADIENT_COLORS = [
 ];
 const GRADIENT_STOPS = [1, 20, 30, 45, 60, 75, 100];
 
-const STATS = [
-  { value: "120+", label: "Projects" },
-  { value: "8", label: "Years" },
-  { value: "40+", label: "Brands" },
-  { value: "3", label: "Continents" },
-];
+const STAT_VALUES = ["120+", "8", "40+", "3"];
 
 export default function Hero() {
+  const { dict } = useDictionary();
+  const t = dict.hero;
+
+  const STATS = [
+    { value: STAT_VALUES[0], label: t.stats.projects },
+    { value: STAT_VALUES[1], label: t.stats.years },
+    { value: STAT_VALUES[2], label: t.stats.brands },
+    { value: STAT_VALUES[3], label: t.stats.continents },
+  ];
+
   return (
     <section
       id="hero"
@@ -51,10 +59,10 @@ export default function Hero() {
               variant="outline"
               className="rounded-none border-white/25 text-white/60 font-medium tracking-widest uppercase text-[10px] px-3 py-1 bg-white/5"
             >
-              Production House
+              {t.badge}
             </Badge>
             <span className="text-[10px] tracking-widest uppercase text-white/40 font-medium">
-              Est. 2019 — Worldwide
+              {t.est}
             </span>
           </div>
 
@@ -63,11 +71,11 @@ export default function Hero() {
             className="display-xl text-white text-balance animate-fade-up"
             style={{ animationDelay: "60ms" }}
           >
-            We make
+            {t.headlineLine1}
             <br />
-            the world
+            {t.headlineLine2}
             <br />
-            <span className="text-[#FF5A00]">stare.</span>
+            <span className="text-[#FF5A00]">{t.headlineLine3}</span>
           </h1>
 
           {/* Sub-copy */}
@@ -75,9 +83,9 @@ export default function Hero() {
             className="max-w-xl text-base md:text-xl font-light text-white/65 leading-relaxed animate-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Film, brand and commercial work that doesn&#39;t apologize.
+            {t.sub1}
             <br className="hidden sm:block" />
-            Bold ideas. Ruthless execution. Zero filler.
+            {t.sub2}
           </p>
 
           {/* CTA above fold */}
@@ -87,9 +95,9 @@ export default function Hero() {
           >
             <a
               href="#work"
-              className="inline-flex items-center shrink-0 rounded-none font-bold tracking-tight h-12 px-8 bg-[#FF5A00] hover:bg-[#e05000] text-white text-base group transition-colors duration-200 ease-in-out"
+              className="inline-flex items-center shrink-0 rounded-none font-bold tracking-tight h-12 px-8 bg-[#FF5A00] hover:bg-[#e05000] text-white text-base group transition-colors duration-200 ease-in-out border border-[#eef7fd]"
             >
-              See our work
+              {t.ctaWork}
               <ArrowRight
                 size={16}
                 className="ml-2 group-hover:translate-x-1 transition-transform duration-200 ease-in-out"
@@ -107,7 +115,7 @@ export default function Hero() {
               >
                 <Play size={12} className="text-white fill-white" />
               </span>
-              Get in touch
+              {t.ctaContact}
             </a>
           </div>
         </div>

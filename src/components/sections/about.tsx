@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { useDictionary } from "@/lib/dictionary-context";
 
 const CLIENTS = [
   "Nike",
@@ -17,6 +18,8 @@ const CLIENTS = [
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const { dict } = useDictionary();
+  const t = dict.about;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,23 +53,20 @@ export default function About() {
             variant="outline"
             className="rounded-none w-fit border-neutral-200 text-muted-foreground text-[10px] uppercase tracking-widest"
           >
-            Est. 2019
+            {t.badge}
           </Badge>
           <h2 className="display-lg text-foreground">
-            We build
+            {t.heading1}
             <br />
-            <span className="text-primary">visual</span>
+            <span className="text-primary">{t.heading2}</span>
             <br />
-            legacies.
+            {t.heading3}
           </h2>
           <p className="text-base text-muted-foreground font-light leading-relaxed max-w-sm">
-            cheeky started in a Shoreditch basement with two editors and a shared
-            Avid licence. Today we&apos;re a 30-strong studio with offices in London,
-            New York and Paris — still run by the people who cut the first reel.
+            {t.description1}
           </p>
           <p className="text-base text-muted-foreground font-light leading-relaxed max-w-sm">
-            We don&apos;t take on more than we can handle. We don&apos;t hide costs.
-            We don&apos;t disappear after delivery.
+            {t.description2}
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function About() {
           }`}
         >
           <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">
-            Brands we&apos;ve worked with
+            {t.clientsLabel}
           </span>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-neutral-100">
             {CLIENTS.map((client) => (

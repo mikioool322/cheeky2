@@ -1,8 +1,12 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import { useDictionary } from "@/lib/dictionary-context";
 
 export default function CtaSection() {
+  const { dict } = useDictionary();
+  const t = dict.cta;
+
   return (
     <section
       id="contact"
@@ -13,19 +17,18 @@ export default function CtaSection() {
         {/* Headline */}
         <div>
           <h2 className="display-xl text-white leading-none">
-            Ready to
+            {t.heading1}
             <br />
-            start
+            {t.heading2}
             <br />
-            something?
+            {t.heading3}
           </h2>
         </div>
 
         {/* Description + form */}
         <div className="flex flex-col md:flex-row gap-12 md:gap-20 md:items-center">
           <p className="text-white/80 text-lg font-light max-w-sm leading-relaxed">
-            Tell us about your project. We'll come back within 24 hours with
-            a frank conversation — no pitch decks, no hidden costs.
+            {t.description}
           </p>
 
           {/* Contact form */}
@@ -37,12 +40,12 @@ export default function CtaSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1">
                 <label htmlFor="cta-name" className="text-xs uppercase tracking-widest font-medium text-white/60">
-                  Name
+                  {t.form.name}
                 </label>
                 <input
                   id="cta-name"
                   type="text"
-                  placeholder="Your name"
+                  placeholder={t.form.namePlaceholder}
                   autoComplete="name"
                   required
                   className="bg-white/10 border border-white/20 text-white placeholder:text-white/30 px-4 py-3 text-sm font-medium rounded-none focus:outline-none focus:border-white transition-colors duration-150"
@@ -50,12 +53,12 @@ export default function CtaSection() {
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="cta-email" className="text-xs uppercase tracking-widest font-medium text-white/60">
-                  Email
+                  {t.form.email}
                 </label>
                 <input
                   id="cta-email"
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder={t.form.emailPlaceholder}
                   autoComplete="email"
                   required
                   className="bg-white/10 border border-white/20 text-white placeholder:text-white/30 px-4 py-3 text-sm font-medium rounded-none focus:outline-none focus:border-white transition-colors duration-150"
@@ -65,12 +68,12 @@ export default function CtaSection() {
 
             <div className="flex flex-col gap-1">
               <label htmlFor="cta-message" className="text-xs uppercase tracking-widest font-medium text-white/60">
-                Project brief
+                {t.form.brief}
               </label>
               <textarea
                 id="cta-message"
                 rows={4}
-                placeholder="What are you making? Tell us the scope, timeline and anything that excites you about this…"
+                placeholder={t.form.briefPlaceholder}
                 className="bg-white/10 border border-white/20 text-white placeholder:text-white/30 px-4 py-3 text-sm font-medium rounded-none focus:outline-none focus:border-white transition-colors duration-150 resize-none"
               />
             </div>
@@ -79,7 +82,7 @@ export default function CtaSection() {
               type="submit"
               className="self-start inline-flex items-center gap-2 bg-[rgb(238,247,253)] text-[#ff6712] font-bold text-sm uppercase tracking-wider px-8 py-3 rounded-none hover:bg-[rgb(238,247,253)]/90 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(238,247,253)] group"
             >
-              Send it
+              {t.form.submit}
               <ArrowRight
                 size={14}
                 className="group-hover:translate-x-1 transition-transform duration-200"
@@ -92,26 +95,26 @@ export default function CtaSection() {
         {/* Direct contact lines */}
         <div className="flex flex-col sm:flex-row gap-6 pt-8 border-t border-white/20">
           <div className="flex flex-col gap-1">
-            <span className="text-[10px] uppercase tracking-widest text-white/50 font-medium">Email</span>
+            <span className="text-[10px] uppercase tracking-widest text-white/50 font-medium">{t.contact.email}</span>
             <a
-              href="mailto:hello@cheeky.studio"
+              href="mailto:hello@cheekystudio.pl"
               className="text-sm font-semibold text-white hover:text-white/70 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
             >
-              hello@cheeky.studio
+              hello@cheekystudio.pl
             </a>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-[10px] uppercase tracking-widest text-white/50 font-medium">Phone</span>
+            <span className="text-[10px] uppercase tracking-widest text-white/50 font-medium">{t.contact.phone}</span>
             <a
-              href="tel:+442071234567"
+              href="tel:+48503990040"
               className="text-sm font-semibold text-white hover:text-white/70 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded"
             >
-              +44 207 123 4567
+              +48 503 990 040
             </a>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-[10px] uppercase tracking-widest text-white/50 font-medium">Location</span>
-            <span className="text-sm font-semibold text-white">London · NYC · Paris</span>
+            <span className="text-[10px] uppercase tracking-widest text-white/50 font-medium">{t.contact.location}</span>
+            <span className="text-sm font-semibold text-white">{t.contact.locationValue}</span>
           </div>
         </div>
       </div>
