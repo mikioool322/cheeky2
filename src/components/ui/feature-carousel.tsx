@@ -114,6 +114,7 @@ export const VideoCarousel = React.forwardRef<HTMLDivElement, VideoCarouselProps
                       ref={(el) => {
                         if (el) videoRefsRef.current[video.src] = el;
                       }}
+                      src={video.src}
                       poster={video.poster}
                       controls={isCenter}
                       controlsList="nodownload"
